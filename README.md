@@ -7,10 +7,14 @@ http://www.ee.columbia.edu/~dpwe/papers/ScheiS97-mussp.pdf
 # Algorithm Description
 In this algorithm, the authors propose extracting a set of features from the input signal and building an automatic classifier that discriminates between speech and music. A subset of this algorithm is implemented here. Specifically, following the details in the paper, the following features have been extracted:
 •	Percentage of “Low-Energy” frames: The proportion of frames with RMS power less than 50% of the mean RMS power within a one-second window. The energy distribution for speechis more left-skewed than for music—there are more quiet frames—so this measure will be higher for speech than for music.
+
 •	Spectral Rolloff Point: : The 95th percentile of the power spectral distribution.
+
 •	Spectral centroid:  The “balancing point” of the spectral power distribution. Many kinds of music involve percussive sounds which, by including high-frequency noise, push the
 spectral mean higher.
+
 •	Spectral flux: The 2-norm of the frame-to-frame spectral amplitude difference vector.  Music has a higher rate of change, and goes through more drastic frame-to-frame changes than speech does; this value is higher for music than for speech.
+
 •	Zero crossing rate:  The number of time-domain zero-crossings within a speech frame.
 
 1-sec frames with 50% overlap are used to extract each of these features. For the Percentage “Low-energy” feature, the 1-sec frame is further divided into shorter 10-ms frames and the percent of these shorter frames that fall below the mean RMS power of the 1-sec window are calculated.
