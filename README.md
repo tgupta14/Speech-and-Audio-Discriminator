@@ -9,7 +9,7 @@ In this algorithm, the authors propose extracting a set of features from the inp
 
 •	**Percentage of “Low-Energy” frames**: The proportion of frames with RMS power less than 50% of the mean RMS power within a one-second window. The energy distribution for speech is more left-skewed than for music—there are more quiet frames—so this measure will be higher for speech than for music.
 
-•	**Spectral Rolloff Point: The 95th percentile of the power spectral distribution.
+•	**Spectral Rolloff Point**: The 95th percentile of the power spectral distribution.
 
 •	**Spectral centroid**:  The “balancing point” of the spectral power distribution. Many kinds of music involve percussive sounds which, by including high-frequency noise, pushes the spectral mean higher.
 
