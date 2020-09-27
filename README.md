@@ -23,6 +23,8 @@ spectral mean higher.
 The resulting features are appended into two data matrices – one for speech and one for music. The rows of these matrices correspond to the number of 1-sec frames processed by the algorithm and the columns correspond to the features extracted (there are 5 columns).
 
 The final step is measuring the separability of these features between the two classes. The Bhattacharyya (BC) distance between the two data sets (features for music and features for speech) is calculated indicating the separability of the two matrices. The range of the distance measure is between 0 (data is completely overlapping) and 1 (data is completely separable). Using this distance measure, the ability of the features to discriminate between speech and music is evaluated.
+#Using the files we have used, the BC Distance score is 0.958 which indicates a very high separability#
+
 https://en.wikipedia.org/wiki/Bhattacharyya_distance
 
 # Folder Structure
