@@ -6,6 +6,7 @@ http://www.ee.columbia.edu/~dpwe/papers/ScheiS97-mussp.pdf
 
 # Algorithm Description
 In this algorithm, the authors propose extracting a set of features from the input signal and building an automatic classifier that discriminates between speech and music. A subset of this algorithm is implemented here. Specifically, following the details in the paper, the following features have been extracted:
+
 •	Percentage of “Low-Energy” frames: The proportion of frames with RMS power less than 50% of the mean RMS power within a one-second window. The energy distribution for speechis more left-skewed than for music—there are more quiet frames—so this measure will be higher for speech than for music.
 
 •	Spectral Rolloff Point: : The 95th percentile of the power spectral distribution.
@@ -22,3 +23,4 @@ spectral mean higher.
 The resulting features are appended into two data matrices – one for speech and one for music. The rows of these matrices correspond to the number of 1-sec frames processed by the algorithm and the columns correspond to the features extracted (there are 5 columns).
 
 The final step is measuring the separability of these features between the two classes. The Bhattacharyya (BC) distance between the two data sets (features for music and features for speech) is calculated indicating the separability of the two matrices. The range of the distance measure is between 0 (data is completely overlapping) and 1 (data is completely separable). Using this distance measure, the ability of the features to discriminate between speech and music is evaluated.
+https://en.wikipedia.org/wiki/Bhattacharyya_distance
